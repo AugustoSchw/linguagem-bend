@@ -1,0 +1,1 @@
+Repositório para entender os conceitos da linguagem de programação "Bend".

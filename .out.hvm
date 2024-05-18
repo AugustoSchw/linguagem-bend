@@ -1,0 +1,19 @@
+@Tree/Leaf = (a (* ((a b) b)))
+
+@Tree/Node = (a (b ((a (b c)) (* c))))
+
+@main = h
+  & @main__fold0 ~ (g h)
+  & @Tree/Node ~ (c (f g))
+  & @Tree/Node ~ (a (b c))
+  & @Tree/Leaf ~ (1 a)
+  & @Tree/Leaf ~ (2 b)
+  & @Tree/Node ~ (d (e f))
+  & @Tree/Leaf ~ (3 d)
+  & @Tree/Leaf ~ (4 e)
+
+@main__fold0 = ((@main__fold0__C0 ((a a) b)) b)
+
+@main__fold0__C0 = (a (b d))
+  &! @main__fold0 ~ (a $(:[+] $(c d)))
+  &! @main__fold0 ~ (b c)
